@@ -1,5 +1,5 @@
-import { BoxStyleType } from "@/types";
 import { createStyleSheet } from "react-native-unistyles";
+import { BoxStyleType } from "./box.type";
 
 export const stylesheetBox = createStyleSheet({
   box: (props: BoxStyleType) => getStyleBox(props),

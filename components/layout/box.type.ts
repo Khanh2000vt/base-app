@@ -2,7 +2,6 @@ import {
   ColorValue,
   DimensionValue,
   FlexAlignType,
-  ShadowStyleIOS,
   StyleProp,
   TransformsStyle,
   ViewStyle,

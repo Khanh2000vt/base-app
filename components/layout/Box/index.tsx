@@ -2,8 +2,9 @@ import React, { forwardRef } from "react";
 import { View } from "react-native";
 import { useStyles } from "react-native-unistyles";
 
-import { stylesheetBox } from "@/themes";
-import { BoxProps, ForwardRefComponent } from "@/types";
+import { ForwardRefComponent } from "@/types";
+import { BoxProps } from "../box.type";
+import { stylesheetBox } from "../box.style";
 
 export const Box: ForwardRefComponent<View, BoxProps> = forwardRef(
   ({ children = null, style, ...props }, ref) => {
