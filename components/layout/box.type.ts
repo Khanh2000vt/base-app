@@ -16,7 +16,7 @@ type FlexJustifyType =
   | "space-evenly"
   | undefined;
 
-export type BoxStyleType = {
+export type ViewStyleType = {
   m?: DimensionValue | undefined;
   mt?: DimensionValue | undefined;
   mr?: DimensionValue | undefined;
@@ -42,36 +42,39 @@ export type BoxStyleType = {
   align?: FlexAlignType | undefined;
   justify?: FlexJustifyType;
   color?: ColorValue | undefined;
-} & Omit<
-  ViewStyle,
-  | "margin"
-  | "marginTop"
-  | "marginRight"
-  | "marginEnd"
-  | "marginBottom"
-  | "marginLeft"
-  | "marginStart"
-  | "marginVertical"
-  | "marginHorizontal"
-  | "padding"
-  | "paddingTop"
-  | "paddingRight"
-  | "paddingEnd"
-  | "paddingBottom"
-  | "paddingLeft"
-  | "paddingStart"
-  | "paddingVertical"
-  | "paddingHorizontal"
-  | "maxHeight"
-  | "maxWidth"
-  | "minHeight"
-  | "minWidth"
-  | "alignItems"
-  | "justifyContent"
-  | "backgroundColor"
-  | "overflow"
-  | keyof TransformsStyle
->;
+};
+
+export type BoxStyleType = ViewStyleType &
+  Omit<
+    ViewStyle,
+    | "margin"
+    | "marginTop"
+    | "marginRight"
+    | "marginEnd"
+    | "marginBottom"
+    | "marginLeft"
+    | "marginStart"
+    | "marginVertical"
+    | "marginHorizontal"
+    | "padding"
+    | "paddingTop"
+    | "paddingRight"
+    | "paddingEnd"
+    | "paddingBottom"
+    | "paddingLeft"
+    | "paddingStart"
+    | "paddingVertical"
+    | "paddingHorizontal"
+    | "maxHeight"
+    | "maxWidth"
+    | "minHeight"
+    | "minWidth"
+    | "alignItems"
+    | "justifyContent"
+    | "backgroundColor"
+    | "overflow"
+    | keyof TransformsStyle
+  >;
 
 export type BoxProps = {
   children?: React.ReactNode;
