@@ -1,11 +1,11 @@
 import LottieView, { LottieViewProps } from "lottie-react-native";
 import React, { forwardRef } from "react";
 
-import { stylesheetBox, ViewStyleType } from "@/components/layout";
+import { BoxStyleType, stylesheetBox } from "@/components/layout";
 import { ForwardRefComponent } from "@/types";
 import { useStyles } from "react-native-unistyles";
 
-type LottieViewAutoAppProps = ViewStyleType &
+type LottieViewAutoAppProps = BoxStyleType &
   Pick<
     LottieViewProps,
     | "source"

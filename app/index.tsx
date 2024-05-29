@@ -1,13 +1,16 @@
-import { Box, Center } from "@/components/layout";
-import { Text } from "react-native";
+import {Animations} from '@/assets';
+import {Center} from '@/components/layout';
+import {LottieAutoApp} from '@/components/media';
 
 export default function Index() {
   return (
-    <Box flex={1}>
-      <Text>123</Text>
-      <Center flex={1} color="green">
-        <Text>456</Text>
-      </Center>
-    </Box>
+    <Center flex={1}>
+      <LottieAutoApp
+        source={Animations.Spinner}
+        width={100}
+        height={100}
+        color="red"
+      />
+    </Center>
   );
 }
