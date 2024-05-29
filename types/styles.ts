@@ -1,0 +1,74 @@
+import {
+  ColorValue,
+  DimensionValue,
+  FlexAlignType,
+  ShadowStyleIOS,
+  TransformsStyle,
+  ViewStyle,
+} from "react-native";
+
+type FlexJustifyType =
+  | "flex-start"
+  | "flex-end"
+  | "center"
+  | "space-between"
+  | "space-around"
+  | "space-evenly"
+  | undefined;
+
+export type BoxStyleType = {
+  m?: DimensionValue | undefined;
+  mt?: DimensionValue | undefined;
+  mr?: DimensionValue | undefined;
+  me?: DimensionValue | undefined;
+  mb?: DimensionValue | undefined;
+  ml?: DimensionValue | undefined;
+  ms?: DimensionValue | undefined;
+  mv?: DimensionValue | undefined;
+  mh?: DimensionValue | undefined;
+  p?: DimensionValue | undefined;
+  pt?: DimensionValue | undefined;
+  pr?: DimensionValue | undefined;
+  pe?: DimensionValue | undefined;
+  pb?: DimensionValue | undefined;
+  pl?: DimensionValue | undefined;
+  ps?: DimensionValue | undefined;
+  pv?: DimensionValue | undefined;
+  ph?: DimensionValue | undefined;
+  maxH?: DimensionValue | undefined;
+  maxW?: DimensionValue | undefined;
+  minH?: DimensionValue | undefined;
+  minW?: DimensionValue | undefined;
+  align?: FlexAlignType | undefined;
+  justify?: FlexJustifyType;
+  color?: ColorValue | undefined;
+} & Omit<
+  ViewStyle,
+  | "margin"
+  | "marginTop"
+  | "marginRight"
+  | "marginEnd"
+  | "marginBottom"
+  | "marginLeft"
+  | "marginStart"
+  | "marginVertical"
+  | "marginHorizontal"
+  | "padding"
+  | "paddingTop"
+  | "paddingRight"
+  | "paddingEnd"
+  | "paddingBottom"
+  | "paddingLeft"
+  | "paddingStart"
+  | "paddingVertical"
+  | "paddingHorizontal"
+  | "maxHeight"
+  | "maxWidth"
+  | "minHeight"
+  | "minWidth"
+  | "alignItems"
+  | "justifyContent"
+  | "backgroundColor"
+  | "overflow"
+  | keyof TransformsStyle
+>;
