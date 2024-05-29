@@ -6,7 +6,7 @@ import { Box } from "../Box";
 import { BoxProps } from "../box.type";
 
 export const AbsoluteCenter: ForwardRefComponent<View, BoxProps> = forwardRef(
-  ({ children = null, ...props }, ref) => {
+  (props, ref) => {
     return (
       <Box
         ref={ref}
@@ -14,9 +14,7 @@ export const AbsoluteCenter: ForwardRefComponent<View, BoxProps> = forwardRef(
         justify="center"
         align="center"
         {...props}
-      >
-        {children}
-      </Box>
+      />
     );
   }
 );

@@ -4,6 +4,7 @@ import {
   FlexAlignType,
   StyleProp,
   TransformsStyle,
+  ViewProps,
   ViewStyle,
 } from "react-native";
 
@@ -79,4 +80,5 @@ export type BoxStyleType = ViewStyleType &
 export type BoxProps = {
   children?: React.ReactNode;
   style?: StyleProp<ViewStyle>;
-} & BoxStyleType;
+} & BoxStyleType &
+  Pick<ViewProps, "onLayout">;

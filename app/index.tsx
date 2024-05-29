@@ -5,7 +5,7 @@ export default function Index() {
   return (
     <Box flex={1}>
       <Text>123</Text>
-      <Center flex={1} justify="flex-start">
+      <Center flex={1} color="green">
         <Text>456</Text>
       </Center>
     </Box>

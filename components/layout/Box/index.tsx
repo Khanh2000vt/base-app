@@ -7,12 +7,15 @@ import { BoxProps } from "../box.type";
 import { stylesheetBox } from "../box.style";
 
 export const Box: ForwardRefComponent<View, BoxProps> = forwardRef(
-  ({ children = null, style, ...props }, ref) => {
+  ({ children = null, style, onLayout, ...props }, ref) => {
     const { styles } = useStyles(stylesheetBox);
     return (
-      <View style={[styles.box(props), style]} ref={ref}>
-        {children}
-      </View>
+      <View
+        style={[styles.box(props), style]}
+        onLayout={onLayout}
+        ref={ref}
+        children={children}
+      />
     );
   }
 );

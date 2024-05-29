@@ -6,11 +6,7 @@ import { Box } from "../Box";
 import { BoxProps } from "../box.type";
 
 export const Center: ForwardRefComponent<View, BoxProps> = forwardRef(
-  ({ children = null, ...props }, ref) => {
-    return (
-      <Box ref={ref} justify="center" align="center" {...props}>
-        {children}
-      </Box>
-    );
+  (props, ref) => {
+    return <Box ref={ref} justify="center" align="center" {...props} />;
   }
 );

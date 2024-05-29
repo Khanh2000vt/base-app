@@ -6,11 +6,7 @@ import { Box } from "../Box";
 import { BoxProps } from "../box.type";
 
 export const Wrap: ForwardRefComponent<View, BoxProps> = forwardRef(
-  ({ children = null, ...props }, ref) => {
-    return (
-      <Box ref={ref} flexWrap="wrap" {...props}>
-        {children}
-      </Box>
-    );
+  (props, ref) => {
+    return <Box ref={ref} flexWrap="wrap" {...props} />;
   }
 );
