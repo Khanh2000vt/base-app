@@ -3,6 +3,7 @@ import {
   DimensionValue,
   FlexAlignType,
   ShadowStyleIOS,
+  StyleProp,
   TransformsStyle,
   ViewStyle,
 } from "react-native";
@@ -72,3 +73,8 @@ export type BoxStyleType = {
   | "overflow"
   | keyof TransformsStyle
 >;
+
+export type BoxProps = {
+  children?: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
+} & BoxStyleType;
