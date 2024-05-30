@@ -13,39 +13,23 @@ import {ESpinnerPlacement, EVariant} from '../forms.enum';
 import {stylesheetForms} from '../forms.style';
 
 type ButtonAppProps = {
-  colorScheme?: ColorValue;
   isActive?: boolean;
   isDisabled?: boolean;
   isLoading?: boolean;
-  leftIcon?: React.ReactElement;
-  rightIcon?: React.ReactElement;
-  loadingText?: string;
-  spinner?: React.ReactElement;
-  spinnerPlacement?: ESpinnerPlacement;
-  variant?: EVariant;
   scaleTo?: number;
   onPress?: () => void;
-  title?: string;
-} & BoxProps;
+  children?: React.ReactNode;
+};
 
 const BoxAnimated = Animated.createAnimatedComponent(Box);
 
 export const ButtonBase: React.FC<ButtonAppProps> = ({
-  colorScheme,
   isActive = true,
   isDisabled = false,
   isLoading = false,
-  leftIcon,
-  rightIcon,
-  loadingText,
-  spinner,
-  spinnerPlacement = ESpinnerPlacement.Start,
-  variant = EVariant.Solid,
   scaleTo = 0.98,
   onPress,
-  title,
-  style,
-  ...props
+  children,
 }) => {
   const {styles} = useStyles(stylesheetForms);
   const pressed = useSharedValue(0);
@@ -90,8 +74,11 @@ export const ButtonBase: React.FC<ButtonAppProps> = ({
       onPressIn={onPressIn}
       onPressOut={onPressOut}
       onPress={handelPress}
-      disabled={isDisabled}>
-      <BoxAnimated style={[styleScale, styles.buttonBase, style]} {...props} />
+      disabled={isDisabled || isLoading || !isActive}>
+      <BoxAnimated
+        style={[styleScale, styles.buttonBase]}
+        children={children}
+      />
     </Pressable>
   );
 };

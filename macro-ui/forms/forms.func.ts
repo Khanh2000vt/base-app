@@ -10,12 +10,17 @@ export const getVariantButtonBase = (
     case EVariant.Outline:
       return {
         button: {
-          backgroundColor: '#fff',
+          backgroundColor: colors.white,
           borderColor: color,
         },
         text: {
           color: color,
         },
+      };
+    case EVariant.Unstyled:
+      return {
+        button: {},
+        text: {},
       };
     case EVariant.Solid:
     default:
@@ -25,7 +30,7 @@ export const getVariantButtonBase = (
           borderColor: color,
         },
         text: {
-          color: '#fff',
+          color: colors.white,
         },
       };
   }

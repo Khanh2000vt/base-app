@@ -33,6 +33,9 @@ export const ButtonApp: React.FC<ButtonAppProps> = ({
   color,
   variant = EVariant.Solid,
   style,
+  isActive = true,
+  isDisabled,
+  onPress,
   ...props
 }) => {
   const {styles, theme} = useStyles(stylesheetForms);
@@ -58,7 +61,11 @@ export const ButtonApp: React.FC<ButtonAppProps> = ({
 
   return (
     <Box height={verticalScale(40)} alignSelf="center">
-      <ButtonBase>
+      <ButtonBase
+        isActive={isActive}
+        isLoading={isLoading}
+        isDisabled={isDisabled}
+        onPress={onPress}>
         <Row
           columnGap={12}
           flex={1}
@@ -67,7 +74,10 @@ export const ButtonApp: React.FC<ButtonAppProps> = ({
           justify="center"
           align="center"
           borderWidth={1}
-          style={styles.buttonApp(variant, color || theme.colors.tint)}
+          style={[
+            styles.buttonApp(variant, color || theme.colors.tint),
+            styles.activeButton(!!isActive),
+          ]}
           {...props}>
           <Box>{LeftIcon}</Box>
           <Box>

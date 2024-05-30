@@ -4,9 +4,7 @@ export enum ESpinnerPlacement {
 }
 
 export enum EVariant {
-  Ghost = 'ghost',
   Outline = 'outline',
   Solid = 'solid',
-  Link = 'link',
   Unstyled = 'unstyled',
 }

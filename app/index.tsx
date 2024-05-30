@@ -32,7 +32,7 @@ export default function Index() {
           <LottieAutoApp source={Animations.Spinner} width={24} height={24} />
         }
         loadingText="Loading"
-        isLoading
+
         // color={'red'}
       />
       <ButtonApp
@@ -45,6 +45,7 @@ export default function Index() {
         }
         loadingText="Loading"
         isLoading
+        isActive={false}
         variant={EVariant.Outline}
         // color={'red'}
       />

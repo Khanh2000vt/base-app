@@ -11,4 +11,7 @@ export const stylesheetForms = createStyleSheet(theme => ({
     getVariantButtonBase(variant, color, theme.colors).button,
   textButtonApp: (variant: EVariant, color: ColorValue) =>
     getVariantButtonBase(variant, color, theme.colors).text,
+  activeButton: (active: boolean) => ({
+    opacity: active ? 1 : 0.5,
+  }),
 }));
