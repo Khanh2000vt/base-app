@@ -1,11 +1,10 @@
-import { createStyleSheet } from "react-native-unistyles";
-import { BoxStyleType } from "./box.type";
+import {ColorValue} from 'react-native/types';
+import {TypographyStyleType} from './typography.type';
 
-export const stylesheetBox = createStyleSheet({
-  box: (props: BoxStyleType) => getStyleBox(props),
-});
-
-export const getStyleBox = (props: BoxStyleType) => {
+export const getStyleTypography = (
+  props: TypographyStyleType,
+  colorDefault: ColorValue,
+) => {
   const {
     m,
     mt,
@@ -31,7 +30,9 @@ export const getStyleBox = (props: BoxStyleType) => {
     minW,
     align,
     justify,
-    color,
+    color = colorDefault,
+    size,
+    weight,
     ...propsStyle
   } = props;
   const margin = {
@@ -62,6 +63,6 @@ export const getStyleBox = (props: BoxStyleType) => {
     minWidth: minW,
     alignItems: align,
     justifyContent: justify,
-    backgroundColor: color,
+    color: color,
   };
 };

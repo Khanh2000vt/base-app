@@ -1,9 +1,9 @@
-import React, { forwardRef } from "react";
-import { View } from "react-native";
+import React, {forwardRef} from 'react';
+import {View} from 'react-native';
 
-import { ForwardRefComponent } from "@/types";
-import { Box } from "../Box";
-import { BoxProps } from "../box.type";
+import {ForwardRefComponent} from '@/types';
+import {Box} from '../Box';
+import {BoxProps} from '../layout.type';
 
 export const AbsoluteCenter: ForwardRefComponent<View, BoxProps> = forwardRef(
   (props, ref) => {
@@ -16,5 +16,5 @@ export const AbsoluteCenter: ForwardRefComponent<View, BoxProps> = forwardRef(
         {...props}
       />
     );
-  }
+  },
 );

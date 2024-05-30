@@ -6,15 +6,15 @@ import {
   TransformsStyle,
   ViewProps,
   ViewStyle,
-} from "react-native";
+} from 'react-native';
 
 type FlexJustifyType =
-  | "flex-start"
-  | "flex-end"
-  | "center"
-  | "space-between"
-  | "space-around"
-  | "space-evenly"
+  | 'flex-start'
+  | 'flex-end'
+  | 'center'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
   | undefined;
 
 export type ViewStyleType = {
@@ -45,40 +45,40 @@ export type ViewStyleType = {
   color?: ColorValue | undefined;
 };
 
-export type BoxStyleType = ViewStyleType &
+export type LayoutStyleType = ViewStyleType &
   Omit<
     ViewStyle,
-    | "margin"
-    | "marginTop"
-    | "marginRight"
-    | "marginEnd"
-    | "marginBottom"
-    | "marginLeft"
-    | "marginStart"
-    | "marginVertical"
-    | "marginHorizontal"
-    | "padding"
-    | "paddingTop"
-    | "paddingRight"
-    | "paddingEnd"
-    | "paddingBottom"
-    | "paddingLeft"
-    | "paddingStart"
-    | "paddingVertical"
-    | "paddingHorizontal"
-    | "maxHeight"
-    | "maxWidth"
-    | "minHeight"
-    | "minWidth"
-    | "alignItems"
-    | "justifyContent"
-    | "backgroundColor"
-    | "overflow"
+    | 'margin'
+    | 'marginTop'
+    | 'marginRight'
+    | 'marginEnd'
+    | 'marginBottom'
+    | 'marginLeft'
+    | 'marginStart'
+    | 'marginVertical'
+    | 'marginHorizontal'
+    | 'padding'
+    | 'paddingTop'
+    | 'paddingRight'
+    | 'paddingEnd'
+    | 'paddingBottom'
+    | 'paddingLeft'
+    | 'paddingStart'
+    | 'paddingVertical'
+    | 'paddingHorizontal'
+    | 'maxHeight'
+    | 'maxWidth'
+    | 'minHeight'
+    | 'minWidth'
+    | 'alignItems'
+    | 'justifyContent'
+    | 'backgroundColor'
+    | 'overflow'
     | keyof TransformsStyle
   >;
 
 export type BoxProps = {
   children?: React.ReactNode;
   style?: StyleProp<ViewStyle>;
-} & BoxStyleType &
-  Pick<ViewProps, "onLayout">;
+} & LayoutStyleType &
+  Pick<ViewProps, 'onLayout'>;

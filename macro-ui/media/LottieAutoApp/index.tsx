@@ -1,23 +1,23 @@
-import LottieView, { LottieViewProps } from "lottie-react-native";
-import React, { forwardRef } from "react";
+import LottieView, {LottieViewProps} from 'lottie-react-native';
+import React, {forwardRef} from 'react';
 
-import { BoxStyleType, stylesheetBox } from "@/components/layout";
-import { ForwardRefComponent } from "@/types";
-import { useStyles } from "react-native-unistyles";
+import {LayoutStyleType, stylesheetLayout} from '@/components/layout';
+import {ForwardRefComponent} from '@/types';
+import {useStyles} from 'react-native-unistyles';
 
-type LottieViewAutoAppProps = BoxStyleType &
+type LottieViewAutoAppProps = LayoutStyleType &
   Pick<
     LottieViewProps,
-    | "source"
-    | "progress"
-    | "speed"
-    | "duration"
-    | "resizeMode"
-    | "renderMode"
-    | "onAnimationFinish"
-    | "onAnimationLoaded"
-    | "onAnimationFailure"
-    | "colorFilters"
+    | 'source'
+    | 'progress'
+    | 'speed'
+    | 'duration'
+    | 'resizeMode'
+    | 'renderMode'
+    | 'onAnimationFinish'
+    | 'onAnimationLoaded'
+    | 'onAnimationFailure'
+    | 'colorFilters'
   >;
 
 export const LottieAutoApp: ForwardRefComponent<
@@ -38,9 +38,9 @@ export const LottieAutoApp: ForwardRefComponent<
       colorFilters,
       ...props
     },
-    ref
+    ref,
   ) => {
-    const { styles } = useStyles(stylesheetBox);
+    const {styles} = useStyles(stylesheetLayout);
     return (
       <LottieView
         source={source}
@@ -56,8 +56,8 @@ export const LottieAutoApp: ForwardRefComponent<
         autoPlay
         loop
         ref={ref}
-        style={styles.box(props)}
+        style={styles.layout(props)}
       />
     );
-  }
+  },
 );
