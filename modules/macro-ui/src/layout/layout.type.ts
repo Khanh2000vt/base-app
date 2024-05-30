@@ -82,3 +82,7 @@ export type BoxProps = {
   style?: StyleProp<ViewStyle>;
 } & LayoutStyleType &
   Pick<ViewProps, 'onLayout'>;
+
+export type ForwardRefComponent<T, P> = React.ForwardRefExoticComponent<
+  P & React.RefAttributes<T>
+>;
