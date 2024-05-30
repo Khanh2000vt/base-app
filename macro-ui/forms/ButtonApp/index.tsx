@@ -1,8 +1,8 @@
+import {Box, BoxProps, Row} from '@/macro-ui/layout';
+import {TextApp} from '@/macro-ui/typography';
 import {horizontalScale, verticalScale} from '@/themes/scale';
 import React, {useMemo} from 'react';
 import {useStyles} from 'react-native-unistyles';
-import {Box, BoxProps, Row} from '../../layout';
-import {TextApp} from '../../typography';
 import {ButtonBase} from '../ButtonBase';
 import {ESpinnerPlacement, EVariant} from '../forms.enum';
 import {stylesheetForms} from '../forms.style';

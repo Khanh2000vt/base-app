@@ -1,3 +1,4 @@
-import Heart from "./heart.svg";
+import Check from './check.svg';
+import Heart from './heart.svg';
 
-export const Icons = { Heart };
+export const Icons = {Heart, Check};

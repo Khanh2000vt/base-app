@@ -2,17 +2,20 @@ import {Animations, Icons} from '@/assets';
 import {
   ButtonApp,
   ButtonBase,
+  Checkbox,
   ESpinnerPlacement,
   EVariant,
 } from '@/macro-ui/forms';
 import {Box} from '@/macro-ui/layout';
 import {LottieAutoApp} from '@/macro-ui/media';
 import {TextApp} from '@/macro-ui/typography';
+import {useState} from 'react';
 import {Text} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
 
 export default function Index() {
   const {theme} = useStyles();
+  const [check, setCheck] = useState<string | undefined>(undefined);
 
   return (
     <Box flex={1} gap={10}>
@@ -48,6 +51,13 @@ export default function Index() {
         isActive={false}
         variant={EVariant.Outline}
         // color={'red'}
+      />
+
+      <Checkbox
+        onChange={setCheck}
+        isChecked={!!check}
+        value={'test'}
+        name="Checked"
       />
     </Box>
   );

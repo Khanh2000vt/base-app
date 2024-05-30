@@ -1,6 +1,7 @@
 import React, {forwardRef} from 'react';
 import {View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
+import Animated from 'react-native-reanimated';
 
 import {BoxProps, ForwardRefComponent} from '../layout.type';
 import {stylesheetLayout} from '../layout.style';
@@ -18,3 +19,5 @@ export const Box: ForwardRefComponent<View, BoxProps> = forwardRef(
     );
   },
 );
+
+export const BoxAnimated = Animated.createAnimatedComponent(Box);

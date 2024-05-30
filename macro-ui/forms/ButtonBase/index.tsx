@@ -1,15 +1,14 @@
+import {BoxAnimated} from '@/macro-ui/layout';
 import React, {useRef} from 'react';
-import {ColorValue, Pressable} from 'react-native';
-import Animated, {
+import {Pressable} from 'react-native';
+import {
   interpolate,
   useAnimatedStyle,
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
 import {useStyles} from 'react-native-unistyles';
-import {Box, BoxProps} from '../../layout';
 
-import {ESpinnerPlacement, EVariant} from '../forms.enum';
 import {stylesheetForms} from '../forms.style';
 
 type ButtonAppProps = {
@@ -20,8 +19,6 @@ type ButtonAppProps = {
   onPress?: () => void;
   children?: React.ReactNode;
 };
-
-const BoxAnimated = Animated.createAnimatedComponent(Box);
 
 export const ButtonBase: React.FC<ButtonAppProps> = ({
   isActive = true,
