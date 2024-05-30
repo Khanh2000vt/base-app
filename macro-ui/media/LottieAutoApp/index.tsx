@@ -1,9 +1,11 @@
 import LottieView, {LottieViewProps} from 'lottie-react-native';
 import React, {forwardRef} from 'react';
-
-import {LayoutStyleType, stylesheetLayout} from '@/components/layout';
-import {ForwardRefComponent} from '@/types';
 import {useStyles} from 'react-native-unistyles';
+import {
+  ForwardRefComponent,
+  LayoutStyleType,
+  stylesheetLayout,
+} from '../../layout';
 
 type LottieViewAutoAppProps = LayoutStyleType &
   Pick<

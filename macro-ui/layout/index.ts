@@ -1,3 +1,4 @@
+export * from './Absolute';
 export * from './AbsoluteCenter';
 export * from './Box';
 export * from './Center';

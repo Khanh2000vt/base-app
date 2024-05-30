@@ -1,5 +1,7 @@
 import React from 'react';
 import {Text} from 'react-native';
+import {useStyles} from 'react-native-unistyles';
+import {stylesheetTypography} from '../typography.style';
 import {TextAppProps} from '../typography.type';
 
 export const TextApp: React.FC<TextAppProps> = ({
@@ -17,7 +19,9 @@ export const TextApp: React.FC<TextAppProps> = ({
   style,
   maxFontSizeMultiplier,
   minimumFontScale,
+  ...props
 }) => {
+  const {styles} = useStyles(stylesheetTypography);
   return (
     <Text
       allowFontScaling={allowFontScaling}
@@ -33,7 +37,7 @@ export const TextApp: React.FC<TextAppProps> = ({
       onLongPress={onLongPress}
       maxFontSizeMultiplier={maxFontSizeMultiplier}
       minimumFontScale={minimumFontScale}
-      style={[style]}
+      style={[styles.typography(props), style]}
     />
   );
 };

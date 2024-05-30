@@ -1,5 +1,6 @@
+import {FontSize} from '@/themes';
 import {ColorValue} from 'react-native/types';
-import {TypographyStyleType} from './typography.type';
+import {FontWeightType, TypographyStyleType} from './typography.type';
 
 export const getStyleTypography = (
   props: TypographyStyleType,
@@ -31,7 +32,7 @@ export const getStyleTypography = (
     align,
     justify,
     color = colorDefault,
-    size,
+    size = FontSize.Font18,
     weight,
     ...propsStyle
   } = props;
@@ -57,6 +58,7 @@ export const getStyleTypography = (
     ...propsStyle,
     ...margin,
     ...padding,
+    ...getFontWeight(weight),
     maxHeight: maxH,
     maxWidth: maxW,
     minHeight: minH,
@@ -64,5 +66,26 @@ export const getStyleTypography = (
     alignItems: align,
     justifyContent: justify,
     color: color,
+    fontSize: size,
   };
+};
+
+//Bổ xung fontFamily vào các case
+const getFontWeight = (weight: FontWeightType) => {
+  switch (weight) {
+    case 100:
+    case 200:
+    case 300:
+    case 400:
+    case 500:
+    case 600:
+    case 700:
+    case 800:
+    case 900:
+    default:
+      return {
+        fontFamily: 'SpaceMono',
+        fontWeight: weight,
+      };
+  }
 };

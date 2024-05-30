@@ -6,11 +6,11 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
+import {useStyles} from 'react-native-unistyles';
+import {Box, BoxProps} from '../../layout';
 
-import {Box} from '@/components/layout';
-
-import {TIME_ANIMATION} from '../forms.constant';
 import {ESpinnerPlacement, EVariant} from '../forms.enum';
+import {stylesheetForms} from '../forms.style';
 
 type ButtonAppProps = {
   colorScheme?: ColorValue;
@@ -26,11 +26,11 @@ type ButtonAppProps = {
   scaleTo?: number;
   onPress?: () => void;
   title?: string;
-};
+} & BoxProps;
 
 const BoxAnimated = Animated.createAnimatedComponent(Box);
 
-export const ButtonApp: React.FC<ButtonAppProps> = ({
+export const ButtonBase: React.FC<ButtonAppProps> = ({
   colorScheme,
   isActive = true,
   isDisabled = false,
@@ -41,10 +41,13 @@ export const ButtonApp: React.FC<ButtonAppProps> = ({
   spinner,
   spinnerPlacement = ESpinnerPlacement.Start,
   variant = EVariant.Solid,
-  scaleTo = 0.9,
+  scaleTo = 0.98,
   onPress,
   title,
+  style,
+  ...props
 }) => {
+  const {styles} = useStyles(stylesheetForms);
   const pressed = useSharedValue(0);
 
   const throttleRef = useRef<boolean>(true);
@@ -88,7 +91,7 @@ export const ButtonApp: React.FC<ButtonAppProps> = ({
       onPressOut={onPressOut}
       onPress={handelPress}
       disabled={isDisabled}>
-      <BoxAnimated style={[styleScale]}></BoxAnimated>
+      <BoxAnimated style={[styleScale, styles.buttonBase, style]} {...props} />
     </Pressable>
   );
 };
